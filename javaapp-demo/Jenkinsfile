@@ -1,0 +1,29 @@
+pipeline {
+    stages {
+        stage('Initial') {
+            steps {
+                echo 'Starting phase.......'
+            }
+        }
+		stage('clean') {
+            steps {
+                bat 'mvn clean'
+            }
+        }
+		stage('compile') {
+            steps {
+                bat 'mvn compile'
+            }
+        }
+		stage('package') {
+            steps {
+                bat 'mvn package'
+            }
+        }
+		stage('test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+}
+  
